@@ -4,124 +4,576 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" type="style">
-    <title>Archē | Effortless Voice Dictation</title>
+    <link href="style.css" rel="stylesheet">
+    <title>Archē | Voice-First AI Dictation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 
-<style>
-    body {
-        background-color: beige;
-        margin: 0px;
-    }
-
-    .nav-bar {
-        max-height: 60px;
-        height: 60px;
-        background-color: greenyellow;
-        border-radius: 45px;
-    }
-
-    .navlogo {
-        padding-top: 5px;
-        padding-left: 5px;
-        max-height: 50px;
-        height: 60px;
-        border-radius: 45px;
-    }
-
-    .hero-text1 {
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        text-align: center;
-        color: gray;
-        font-size: 70px;
-        padding-top: 70px;
-        padding-bottom: 0px;
-    }
-
-    .hero-text2 {
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        text-align: center;
-        color: dimgrey;
-        font-size: 72px;
-    }
-
-    .windows-button {
-        text-align: center;
-        height: 40px;
-        outline-width: 0px;
-        background-color: greenyellow;
-        font-style: italic;
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    }
-
-    .button {
-        text-align: center;
-        padding-top: 20px;
-    }
-
-    .section1 {
-        background-color: darkcyan;
-        height: 200px;
-        border-top-left-radius: 60px;
-        border-top-right-radius: 60px;
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        color: beige;
-        font-size: 25px;
-        text-align: center;
-        padding-top: 20px;
-        padding-bottom: 10px;
-    }
-
-    .cover {
-        margin: 7px;
-    }
-
-    .step1 {
-        margin: 5px;
-        background-color: beige;
-        height: 50px;
-    }
-
-    .step2 {
-        margin: 5px;
-        background-color: beige;
-        height: 50px;
-    }
-
-    .step3 {
-        margin: 5px;
-        background-color: beige;
-        height: 50px;
-    }
-</style>
-
 <body>
-    <div class="cover">
-        <div class="nav-bar">
-            <nav>
-                <img class="navlogo" src="logo.jpg">
-            </nav>
-        </div>
-        <div class="hero-section">
-            <div class="hero-text1">
-                Prompt Quicker,
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="logo.jpg" alt="Archē Logo">
+                <span>Archē</span>
             </div>
-            <div class="hero-text2">
-                Like Never Before
-            </div>
-            <div class="button">
-                <button class="windows-button">Download for Windows</button>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#demo">Demo</a>
+                <a href="#how-it-works">How it Works</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#download" class="nav-cta">Download</a>
             </div>
         </div>
-    </div>
-    <br>
-    <br>
-    <div class="section1">
-        Steps to get quicker while typing...
-        <div class="step1"></div>
-        <div class="step2"></div>
-        <div class="step3"></div>
-    </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <canvas id="hero-canvas"></canvas>
+        <div class="hero-container">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                AI-Powered Voice Dictation
+            </div>
+            <h1 class="hero-title">
+                Speak naturally.<br>
+                <span class="gradient-text">Write effortlessly.</span>
+            </h1>
+            <p class="hero-subtitle">
+                Archē transforms your voice into text with unmatched accuracy and speed.
+                Stop typing, start speaking.
+            </p>
+            <div class="hero-cta">
+                <button class="btn-primary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    Download for Windows
+                </button>
+                <button class="btn-secondary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                    </svg>
+                    Watch Demo
+                </button>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number">99.8%</div>
+                    <div class="stat-label">Accuracy</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">3x</div>
+                    <div class="stat-label">Faster</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Languages</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real-Time Transcription Demo -->
+    <section id="demo" class="transcription-section section-animate">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">See the magic in action</h2>
+                <p class="section-subtitle">Watch as Archē transforms messy speech into polished text in real-time</p>
+            </div>
+            <div class="transcription-demo">
+                <div class="demo-card messy-card">
+                    <div class="demo-label">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                            <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                        </svg>
+                        Raw Speech Input
+                    </div>
+                    <div class="demo-content messy-input"></div>
+                </div>
+                <div class="transformation-arrow">
+                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                    <div class="ai-badge">AI Processing</div>
+                </div>
+                <div class="demo-card clean-card">
+                    <div class="demo-label">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        Polished Output
+                    </div>
+                    <div class="demo-content clean-output"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speed Comparison -->
+    <section class="speed-comparison section-animate">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">3x faster than typing</h2>
+                <p class="section-subtitle">See the difference in real-time</p>
+            </div>
+            <div class="comparison-grid">
+                <div class="comparison-card typing-card">
+                    <div class="comparison-header">
+                        <div class="method-icon keyboard-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                                <path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M8 12h.01M12 12h.01M16 12h.01M7 16h10"></path>
+                            </svg>
+                        </div>
+                        <div class="method-info">
+                            <h3>Traditional Typing</h3>
+                            <div class="wpm-display">
+                                <span class="wpm-counter typing-wpm">45</span>
+                                <span class="wpm-label">WPM</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="demo-text-container">
+                        <div class="typing-demo-text"></div>
+                        <span class="cursor-blink">|</span>
+                    </div>
+                </div>
+                <div class="comparison-card dictation-card highlight-card">
+                    <div class="comparison-header">
+                        <div class="method-icon mic-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                                <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                                <line x1="12" y1="19" x2="12" y2="23"></line>
+                            </svg>
+                        </div>
+                        <div class="method-info">
+                            <h3>Archē Dictation</h3>
+                            <div class="wpm-display">
+                                <span class="wpm-counter dictation-wpm">220</span>
+                                <span class="wpm-label">WPM</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="demo-text-container">
+                        <div class="dictation-demo-text"></div>
+                        <span class="cursor-blink">|</span>
+                    </div>
+                    <div class="time-saved-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span class="time-saved">78%</span> faster
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features section-animate">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Everything you need to dictate</h2>
+                <p class="section-subtitle">Powerful features designed for seamless voice-to-text workflow</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card stagger-item">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                            <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                            <line x1="12" y1="19" x2="12" y2="23"></line>
+                            <line x1="8" y1="23" x2="16" y2="23"></line>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Real-Time Transcription</h3>
+                    <p class="feature-description">Watch your words appear instantly as you speak. No delays, no lag—just fluid dictation.</p>
+                </div>
+                <div class="feature-card stagger-item">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Smart Commands</h3>
+                    <p class="feature-description">Control formatting, punctuation, and editing with natural voice commands.</p>
+                </div>
+                <div class="feature-card stagger-item">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Context Aware</h3>
+                    <p class="feature-description">AI understands context, technical terms, and proper nouns for accurate transcription.</p>
+                </div>
+                <div class="feature-card stagger-item">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                            <polyline points="21 15 16 10 5 21"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Multi-App Support</h3>
+                    <p class="feature-description">Works seamlessly across all your favorite apps—from editors to browsers.</p>
+                </div>
+                <div class="feature-card stagger-item">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Privacy First</h3>
+                    <p class="feature-description">Your voice data stays on your device. End-to-end encryption for cloud features.</p>
+                </div>
+                <div class="feature-card stagger-item">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Lightning Fast</h3>
+                    <p class="feature-description">Optimized for speed with minimal resource usage. 3x faster than typing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Integration Showcase -->
+    <section class="app-showcase section-animate">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Works everywhere you do</h2>
+                <p class="section-subtitle">Seamlessly integrated with all your favorite applications</p>
+            </div>
+            <div class="app-showcase-container">
+                <div class="app-mockup active" data-app="slack">
+                    <div class="mockup-window">
+                        <div class="window-header">
+                            <div class="window-dots">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <div class="window-title">Slack - Team Chat</div>
+                        </div>
+                        <div class="window-content slack-content">
+                            <div class="slack-sidebar">
+                                <div class="slack-channel"># general</div>
+                                <div class="slack-channel active"># project-updates</div>
+                                <div class="slack-channel"># random</div>
+                            </div>
+                            <div class="slack-main">
+                                <div class="chat-message">
+                                    <div class="message-avatar">JS</div>
+                                    <div class="message-content">
+                                        <div class="message-author">John Smith</div>
+                                        <div class="message-text typing-animation">Hey team, just finished the quarterly report. </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="arche-overlay">
+                                <div class="arche-indicator">
+                                    <div class="mic-pulse"></div>
+                                    <span>Archē is listening...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="app-mockup" data-app="vscode">
+                    <div class="mockup-window">
+                        <div class="window-header">
+                            <div class="window-dots">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <div class="window-title">Visual Studio Code</div>
+                        </div>
+                        <div class="window-content code-content">
+                            <pre><code><span class="code-comment">// Calculate the total price with tax</span>
+<span class="code-keyword">function</span> <span class="code-function">calculateTotal</span>(<span class="code-param">price, taxRate</span>) {
+    <span class="code-keyword">return</span> price * (1 + taxRate);
+}</code></pre>
+                            <div class="arche-overlay">
+                                <div class="arche-indicator">
+                                    <div class="mic-pulse"></div>
+                                    <span>Dictating code comment...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="app-indicators">
+                    <button class="app-indicator active" data-app="slack">Slack</button>
+                    <button class="app-indicator" data-app="vscode">VS Code</button>
+                    <button class="app-indicator" data-app="gmail">Gmail</button>
+                    <button class="app-indicator" data-app="notion">Notion</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="how-it-works section-animate">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How it works</h2>
+                <p class="section-subtitle">Get started in three simple steps</p>
+            </div>
+            <div class="steps">
+                <div class="step stagger-item">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Download & Install</h3>
+                        <p class="step-description">Quick installation with no complex setup. Works right out of the box on Windows, Mac, and Linux.</p>
+                        <div class="step-visual">
+                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="step-connector"></div>
+                <div class="step stagger-item">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Activate with Hotkey</h3>
+                        <p class="step-description">Press your custom hotkey anywhere to start dictating. Default is <kbd>Ctrl + Shift + Space</kbd>.</p>
+                        <div class="step-visual keyboard-visual">
+                            <div class="key">Ctrl</div>
+                            <span class="plus">+</span>
+                            <div class="key">Shift</div>
+                            <span class="plus">+</span>
+                            <div class="key">Space</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="step-connector"></div>
+                <div class="step stagger-item">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Speak Naturally</h3>
+                        <p class="step-description">Talk as you normally would. Archē handles the rest with AI precision—no training required.</p>
+                        <div class="step-visual">
+                            <div class="voice-indicator">
+                                <div class="voice-ring"></div>
+                                <div class="voice-ring"></div>
+                                <div class="voice-ring"></div>
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing-section section-animate">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Choose your plan</h2>
+                <p class="section-subtitle">Start free, upgrade as you grow</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card stagger-item">
+                    <div class="plan-header">
+                        <h3 class="plan-name">Free</h3>
+                        <div class="plan-price">
+                            <span class="price-amount">$0</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                    </div>
+                    <ul class="plan-features">
+                        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> 30 minutes/day</li>
+                        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Basic commands</li>
+                        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> 10+ languages</li>
+                        <li class="feature-disabled"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> Custom vocabulary</li>
+                        <li class="feature-disabled"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> Priority support</li>
+                    </ul>
+                    <button class="plan-cta btn-secondary">Get Started</button>
+                </div>
+                <div class="pricing-card featured-plan stagger-item">
+                    <div class="plan-badge">Most Popular</div>
+                    <div class="plan-header">
+                        <h3 class="plan-name">Pro</h3>
+                        <div class="plan-price">
+                            <span class="price-amount">$12</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                    </div>
+                    <ul class="plan-features">
+                        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Unlimited usage</li>
+                        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Advanced commands</li>
+                        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> 100+ languages</li>
+                        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Custom vocabulary</li>
+                        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Priority support</li>
+                    </ul>
+                    <button class="plan-cta btn-primary">Start Free Trial</button>
+                </div>
+                <div class="pricing-card stagger-item">
+                    <div class="plan-header">
+                        <h3 class="plan-name">Enterprise</h3>
+                        <div class="plan-price">
+                            <span class="price-amount">Custom</span>
+                        </div>
+                    </div>
+                    <ul class="plan-features">
+                        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Everything in Pro</li>
+                        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Team management</li>
+                        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> SSO & SAML</li>
+                        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Custom models</li>
+                        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Dedicated support</li>
+                    </ul>
+                    <button class="plan-cta btn-secondary">Contact Sales</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials section-animate">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Loved by professionals</h2>
+                <p class="section-subtitle">See what our users have to say</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card stagger-item">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">"Archē has completely changed how I write. I can draft emails 3x faster now and my productivity has skyrocketed."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">S</div>
+                        <div class="author-info">
+                            <div class="author-name">Sarah Chen</div>
+                            <div class="author-role">Content Writer</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card stagger-item">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">"The accuracy is incredible. It understands technical jargon perfectly and saves me hours every week on documentation."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">M</div>
+                        <div class="author-info">
+                            <div class="author-name">Marcus Rodriguez</div>
+                            <div class="author-role">Software Engineer</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card stagger-item">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">"Privacy-focused and lightning fast. Exactly what I needed for my research workflow. Game changer for academics."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">A</div>
+                        <div class="author-info">
+                            <div class="author-name">Aisha Patel</div>
+                            <div class="author-role">Researcher</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="download" class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to transform your workflow?</h2>
+                <p class="cta-subtitle">Join thousands who've already made the switch to voice-first productivity.</p>
+                <button class="btn-primary btn-large">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    Download Archē for Windows
+                </button>
+                <div class="cta-note">Free 14-day trial • No credit card required</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="logo.jpg" alt="Archē Logo">
+                        <span>Archē</span>
+                    </div>
+                    <p class="footer-tagline">Voice-first AI dictation for the modern workflow.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Product</h4>
+                    <ul class="footer-links">
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#download">Download</a></li>
+                        <li><a href="#">Changelog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">API</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Archē. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
